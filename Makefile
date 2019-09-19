@@ -1,6 +1,6 @@
-SRC    = Main.cpp
-TARGET = a.out
-LIBDIR = library
+SRC      = Main.cpp
+TARGET   = a.out
+TEMPLATE = library/misc/template.cpp
 
 CC = g++
 CFLAGS  = -std=gnu++1y -O2
@@ -17,4 +17,4 @@ $(TARGET): $(SRC)
 
 clean:
 	$(RM) $(TARGET)
-	$(CP) $(LIBDIR)/misc/template.cpp Main.cpp
+	$(CP) $(TEMPLATE) $(SRC)
