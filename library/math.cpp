@@ -12,6 +12,9 @@ int gcd(int x, int y) {
   return x;
 }
 
+// 最小公倍数
+int lcm(int x, int y) { return x * y / gcd(x, y); }
+
 // 素数判定
 int isprime(int x) {
   if (x == 2)
