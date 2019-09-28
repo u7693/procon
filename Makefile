@@ -1,6 +1,6 @@
-SRC      = Main.cpp
-TARGET   = a.out
-TEMPLATE = library/misc/template.cpp
+SRC    = Main.cpp
+TARGET = a.out
+MISC   = library/misc
 
 CC = g++
 CFLAGS  = -std=gnu++1y -O2
@@ -13,8 +13,11 @@ CP = cp -f
 $(TARGET): $(SRC)
 	$(CC) $(CFLAGS) $(INCDIRS) $(LDFLAGS) -o $@ $^
 
-.PHONY: clean
+.PHONY: clean aoj
 
 clean:
 	$(RM) $(TARGET)
-	$(CP) $(TEMPLATE) $(SRC)
+	$(CP) $(MISC)/template.cpp $(SRC)
+
+aoj:
+	$(CP) $(MISC)/aoj.cpp $(SRC)
