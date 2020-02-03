@@ -30,6 +30,9 @@ RUN apt-get update \
     && rustup update 2>&1 \
     && rustup component add rls rust-analysis rust-src rustfmt clippy 2>&1 \
     #
+    # Install Procon Tools
+    && cargo install --git https://github.com/tanakh/cargo-atcoder.git \
+    #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
