@@ -11,6 +11,7 @@
 - [statiolake/proconio-rs](https://github.com/statiolake/proconio-rs)
 - [tanakh/cargo-atcoder](https://github.com/tanakh/cargo-atcoder)
 - [tanakh/competitive-rs](https://github.com/tanakh/competitive-rs)
+- [tanakh/memoise](https://github.com/tanakh/memoise)
 
 ### Posts
 
