@@ -32,6 +32,7 @@ RUN apt-get update \
     #
     # Install Procon Tools
     && cargo install --git https://github.com/tanakh/cargo-atcoder.git \
+    && rustup target add x86_64-unknown-linux-musl \
     #
     # Create a non-root user to use if preferred - see https://aka.ms/vscode-remote/containers/non-root-user.
     && groupadd --gid $USER_GID $USERNAME \
