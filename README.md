@@ -2,11 +2,16 @@
 
 ## References
 
-### Crates
+### Tips
+
+- [Repeat string with integer multiplication](https://stackoverflow.com/questions/31216646/repeat-string-with-integer-multiplication)
+
+### Repositories
 
 - [statiolake/proconio-rs](https://github.com/statiolake/proconio-rs)
+- [tanakh/cargo-atcoder](https://github.com/tanakh/cargo-atcoder)
+- [tanakh/competitive-rs](https://github.com/tanakh/competitive-rs)
 
 ### Posts
 
-- [Rustで競技プログラミングの入力をスッキリ記述するマクロ](https://qiita.com/tanakh/items/0ba42c7ca36cd29d0ac8)
 - [Rustでメモ化を行うためのシンプルなライブラリを作った](https://tanakh.hatenablog.com/entry/2020/02/01/160442)
