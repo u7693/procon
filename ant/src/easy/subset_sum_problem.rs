@@ -1,5 +1,3 @@
-use procon::prelude::*;
-
 pub fn dfs(i: usize, sum: usize, n: &usize, a: &[usize], k: &usize) -> bool {
     if i == *n {
         return sum == *k;
@@ -16,15 +14,12 @@ pub fn dfs(i: usize, sum: usize, n: &usize, a: &[usize], k: &usize) -> bool {
     return false;
 }
 
-pub fn solve() {
-    input! {
-        n: usize,
-        a: [usize; n],
-        k: usize,
+pub fn solve(n: &usize, a: &[usize], k: &usize) -> String {
+    if dfs(0, 0, n, a, k) {
+        "Yes".to_string()
+    } else {
+        "No".to_string()
     }
-
-    let result = if dfs(0, 0, &n, &a, &k) { "Yes" } else { "No" };
-    println!("{}", result);
 }
 
 #[cfg(test)]
@@ -36,7 +31,7 @@ mod tests {
         let n = 4;
         let a = [1, 2, 4, 7];
         let k = 13;
-        assert!(dfs(0, 0, &n, &a, &k));
+        assert_eq!(solve(&n, &a, &k), "Yes".to_string())
     }
 
     #[test]
@@ -44,6 +39,6 @@ mod tests {
         let n = 4;
         let a = [1, 2, 4, 7];
         let k = 15;
-        assert!(!dfs(0, 0, &n, &a, &k));
+        assert_eq!(solve(&n, &a, &k), "No".to_string())
     }
 }
