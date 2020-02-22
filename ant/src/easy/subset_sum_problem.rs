@@ -1,4 +1,4 @@
-pub fn dfs(i: usize, sum: usize, n: &usize, a: &[usize], k: &usize) -> bool {
+fn dfs(i: usize, sum: usize, n: &usize, a: &[usize], k: &usize) -> bool {
     if i == *n {
         return sum == *k;
     }

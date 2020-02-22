@@ -1,4 +1,4 @@
-pub fn dfs(x: isize, y: isize, n: &isize, m: &isize, field: &mut Vec<Vec<char>>) {
+fn dfs(x: isize, y: isize, n: &isize, m: &isize, field: &mut Vec<Vec<char>>) {
     field[x as usize][y as usize] = '.';
 
     for dx in -1..2 {
