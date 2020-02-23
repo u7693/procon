@@ -1,3 +1,4 @@
+pub mod best_cow_line;
 pub mod coin_problem;
 pub mod interval_scheduling;
 pub mod lake_counting;
