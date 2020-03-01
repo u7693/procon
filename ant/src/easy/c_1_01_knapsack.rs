@@ -32,7 +32,7 @@ impl Solver1 {
     }
 
     pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
-        let dp = vec![vec![-1; MAX_N + 1]; MAX_W + 1];
+        let dp = vec![vec![-1; MAX_W + 1]; MAX_N + 1];
         let mut solver = Self {
             n,
             weight,
@@ -47,7 +47,7 @@ pub struct Solver2;
 
 impl Solver2 {
     pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
-        let mut dp = vec![vec![0; MAX_N + 1]; MAX_W + 1];
+        let mut dp = vec![vec![0; MAX_W + 1]; MAX_N + 1];
         for i in (0..n).rev() {
             for j in 0..w + 1 {
                 dp[i][j] = if j < weight[i] {
@@ -65,7 +65,7 @@ pub struct Solver3;
 
 impl Solver3 {
     pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
-        let mut dp = vec![vec![0; MAX_N + 1]; MAX_W + 1];
+        let mut dp = vec![vec![0; MAX_W + 1]; MAX_N + 1];
         for i in 0..n {
             for j in 0..w + 1 {
                 dp[i + 1][j] = if j < weight[i] {
@@ -83,7 +83,7 @@ pub struct Solver4;
 
 impl Solver4 {
     pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
-        let mut dp = vec![vec![0; MAX_N + 1]; MAX_W + 1];
+        let mut dp = vec![vec![0; MAX_W + 1]; MAX_N + 1];
         for i in 0..n {
             for j in 0..w + 1 {
                 dp[i + 1][j] = cmp::max(dp[i + 1][j], dp[i][j]);
@@ -94,6 +94,20 @@ impl Solver4 {
             }
         }
         dp[n][w]
+    }
+}
+
+pub struct Solver5;
+
+impl Solver5 {
+    pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
+        let mut dp = vec![0; MAX_W + 1];
+        for i in 0..n {
+            for j in (weight[i]..w + 1).rev() {
+                dp[j] = cmp::max(dp[j], dp[j - weight[i]] + value[i]);
+            }
+        }
+        dp[w]
     }
 }
 
@@ -135,5 +149,14 @@ mod tests {
         let value = vec![3, 2, 4, 2];
         let w = 5;
         assert_eq!(Solver4::solve(n, weight, value, w), 7);
+    }
+
+    #[test]
+    fn case5() {
+        let n = 4;
+        let weight = vec![2, 1, 3, 2];
+        let value = vec![3, 2, 4, 2];
+        let w = 5;
+        assert_eq!(Solver5::solve(n, weight, value, w), 7);
     }
 }
