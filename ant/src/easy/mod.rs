@@ -1,4 +1,4 @@
-pub mod a_1_subset_sum_problem;
+pub mod a_1_subset_sum;
 pub mod a_2_lake_counting;
 pub mod a_3_maze_shortest_path;
 pub mod b_1_coin_problem;
