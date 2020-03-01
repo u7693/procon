@@ -4,7 +4,7 @@ const MAX_N: usize = 1000;
 const MAX_M: usize = 1000;
 
 pub fn solve(n: usize, m: usize, s: String, t: String) -> usize {
-    let mut dp = vec![vec![0; MAX_N + 1]; MAX_M + 1];
+    let mut dp = vec![vec![0; MAX_M + 1]; MAX_N + 1];
     let s: Vec<char> = s.chars().collect();
     let t: Vec<char> = t.chars().collect();
 
