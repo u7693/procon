@@ -8,3 +8,4 @@ pub mod b_4_sarumans_army;
 pub mod b_5_fence_repair;
 pub mod c_1_01_knapsack_problem;
 pub mod c_2_lcs;
+pub mod c_3_unbounded_knapsack;
