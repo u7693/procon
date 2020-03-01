@@ -3,14 +3,14 @@ use std::cmp;
 const MAX_N: usize = 100;
 const MAX_W: usize = 10000;
 
-pub struct Solver {
+pub struct Solver1 {
     n: usize,
     weight: Vec<usize>,
     value: Vec<usize>,
     dp: Vec<Vec<isize>>,
 }
 
-impl Solver {
+impl Solver1 {
     fn rec(&mut self, i: usize, j: usize) -> usize {
         if self.dp[i][j] >= 0 {
             return self.dp[i][j] as usize;
@@ -28,7 +28,7 @@ impl Solver {
         };
 
         self.dp[i][j] = res as isize;
-        return res;
+        res
     }
 
     pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
@@ -43,6 +43,24 @@ impl Solver {
     }
 }
 
+pub struct Solver2;
+
+impl Solver2 {
+    pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
+        let mut dp = vec![vec![0; MAX_N + 1]; MAX_W + 1];
+        for i in (0..n).rev() {
+            for j in 0..w + 1 {
+                dp[i][j] = if j < weight[i] {
+                    dp[i + 1][j]
+                } else {
+                    cmp::max(dp[i + 1][j], dp[i + 1][j - weight[i]] + value[i])
+                };
+            }
+        }
+        dp[0][w]
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -53,6 +71,15 @@ mod tests {
         let weight = vec![2, 1, 3, 2];
         let value = vec![3, 2, 4, 2];
         let w = 5;
-        assert_eq!(Solver::solve(n, weight, value, w), 7);
+        assert_eq!(Solver1::solve(n, weight, value, w), 7);
+    }
+
+    #[test]
+    fn case2() {
+        let n = 4;
+        let weight = vec![2, 1, 3, 2];
+        let value = vec![3, 2, 4, 2];
+        let w = 5;
+        assert_eq!(Solver2::solve(n, weight, value, w), 7);
     }
 }
