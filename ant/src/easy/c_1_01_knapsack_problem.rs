@@ -79,6 +79,24 @@ impl Solver3 {
     }
 }
 
+pub struct Solver4;
+
+impl Solver4 {
+    pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
+        let mut dp = vec![vec![0; MAX_N + 1]; MAX_W + 1];
+        for i in 0..n {
+            for j in 0..w + 1 {
+                dp[i + 1][j] = cmp::max(dp[i + 1][j], dp[i][j]);
+                if j + weight[i] <= w {
+                    dp[i + 1][j + weight[i]] =
+                        cmp::max(dp[i + 1][j + weight[i]], dp[i][j] + value[i]);
+                }
+            }
+        }
+        dp[n][w]
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -108,5 +126,14 @@ mod tests {
         let value = vec![3, 2, 4, 2];
         let w = 5;
         assert_eq!(Solver3::solve(n, weight, value, w), 7);
+    }
+
+    #[test]
+    fn case4() {
+        let n = 4;
+        let weight = vec![2, 1, 3, 2];
+        let value = vec![3, 2, 4, 2];
+        let w = 5;
+        assert_eq!(Solver4::solve(n, weight, value, w), 7);
     }
 }
