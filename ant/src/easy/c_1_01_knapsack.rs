@@ -2,6 +2,8 @@ use std::cmp;
 
 const MAX_N: usize = 100;
 const MAX_W: usize = 10000;
+const MAX_V: usize = 100;
+const INF: usize = 1000000000000;
 
 pub struct Solver1 {
     n: usize,
@@ -111,6 +113,34 @@ impl Solver5 {
     }
 }
 
+pub struct Solver6;
+
+impl Solver6 {
+    pub fn solve(n: usize, weight: Vec<usize>, value: Vec<usize>, w: usize) -> usize {
+        let mut dp = vec![vec![INF; MAX_N * MAX_V + 1]; MAX_N + 1];
+        dp[0][0] = 0;
+
+        for i in 0..n {
+            for j in 0..(MAX_N * MAX_V) {
+                dp[i + 1][j] = if j < value[i] {
+                    dp[i][j]
+                } else {
+                    cmp::min(dp[i][j], dp[i][j - value[i]] + weight[i])
+                };
+            }
+        }
+
+        let mut result = 0;
+        for i in 0..(MAX_N * MAX_V) {
+            if dp[n][i] <= w {
+                result = i;
+            }
+        }
+
+        result
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -158,5 +188,14 @@ mod tests {
         let value = vec![3, 2, 4, 2];
         let w = 5;
         assert_eq!(Solver5::solve(n, weight, value, w), 7);
+    }
+
+    #[test]
+    fn case6() {
+        let n = 4;
+        let weight = vec![2, 1, 3, 2];
+        let value = vec![3, 2, 4, 2];
+        let w = 5;
+        assert_eq!(Solver6::solve(n, weight, value, w), 7);
     }
 }
