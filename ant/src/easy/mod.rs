@@ -9,3 +9,4 @@ pub mod b_5_fence_repair;
 pub mod c_1_01_knapsack;
 pub mod c_2_lcs;
 pub mod c_3_unbounded_knapsack;
+pub mod c_4_bounded_subset_sum;
