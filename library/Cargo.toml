@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 proconio = "0.3"
 memoise = "0.1"
+superslice = "1"
