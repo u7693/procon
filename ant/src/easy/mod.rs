@@ -13,3 +13,4 @@ pub mod c_4_bounded_subset_sum;
 pub mod c_5_lis;
 pub mod c_6_partition_number;
 pub mod c_7_repeated_combination;
+pub mod d_1_expedition;
