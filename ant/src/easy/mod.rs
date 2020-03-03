@@ -11,3 +11,4 @@ pub mod c_2_lcs;
 pub mod c_3_unbounded_knapsack;
 pub mod c_4_bounded_subset_sum;
 pub mod c_5_lis;
+pub mod c_6_partition_number;
