@@ -1,0 +1,6 @@
+[book]
+authors = ["Kousuke Takaki"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Procon"
