@@ -15,3 +15,4 @@ pub mod c_6_partition_number;
 pub mod c_7_repeated_combination;
 pub mod d_1_expedition;
 pub mod d_2_food_chain;
+pub mod e_1_bipartite_graph;
