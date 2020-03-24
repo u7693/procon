@@ -1,11 +1,13 @@
-[dependencies.procon]
-git = "https://github.com/u7693/procon"
-
 [package]
-authors = ['Kousuke Takaki <u7693@protonmail.com>']
-edition = '2018'
-name = 'abc153'
-version = '0.1.0'
+name = "abc154"
+version = "0.1.0"
+authors = ["Kousuke Takaki <u7693@protonmail.com>"]
+edition = "2018"
+
+# dependencies added to new project
+[dependencies]
+procon = { git = "https://github.com/u7693/procon.git" }
+
 [profile.release]
 lto = true
 panic = 'abort'
