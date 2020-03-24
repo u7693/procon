@@ -15,7 +15,7 @@ panic = 'abort'
 
 # dependencies added to new project
 [dependencies]
-procon = { path = "../../library" }
+procon = { git = "https://github.com/u7693/procon.git" }
 # competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
 
 [project]

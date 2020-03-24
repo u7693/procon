@@ -1,5 +1,5 @@
 [dependencies.procon]
-path = '../../library'
+git = "https://github.com/u7693/procon"
 
 [package]
 authors = ['Kousuke Takaki <u7693@protonmail.com>']
