@@ -55,7 +55,7 @@ assert_eq!(v, vec![(2, 5), (2, 6), (1, 3), (1, 4)]);
 
 ```rust
 # fn main() {
-todo!();
+// todo!();
 # }
 ```
 
@@ -63,14 +63,13 @@ todo!();
 
 ```rust
 # fn main() {
-todo!();
+// todo!();
 # }
 ```
 
 ## 二分探索
 
-```rust
-# fn main() {
+```Rust
 use superslice::*;
 
 let a = [1, 1, 3];
@@ -88,7 +87,6 @@ assert_eq!(a.upper_bound(&1), 2);
 assert_eq!(a.upper_bound(&2), 2);
 assert_eq!(a.upper_bound(&3), 3);
 assert_eq!(a.upper_bound(&4), 3);
-# }
 ```
 
 ```rust
