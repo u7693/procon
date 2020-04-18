@@ -6,10 +6,6 @@
 
 ## References
 
-### Tips
-
-- [Repeat string with integer multiplication](https://stackoverflow.com/questions/31216646/repeat-string-with-integer-multiplication)
-
 ### Repositories
 
 - [statiolake/proconio-rs](https://github.com/statiolake/proconio-rs)
