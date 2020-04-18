@@ -53,23 +53,23 @@ assert_eq!(v, vec![(2, 5), (2, 6), (1, 3), (1, 4)]);
 
 ## 多次元配列
 
-```rust
+```rust,ignore
 # fn main() {
-// todo!();
+todo!();
 # }
 ```
 
 ## グラフ
 
-```rust
+```rust,ignore
 # fn main() {
-// todo!();
+todo!();
 # }
 ```
 
 ## 二分探索
 
-```Rust
+```rust,ignore
 use superslice::*;
 
 let a = [1, 1, 3];
