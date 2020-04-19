@@ -1,4 +1,4 @@
-use procon::prelude::*;
+use superslice::*;
 use std::cmp;
 
 const MAX_N: usize = 1000000;

@@ -14,7 +14,6 @@ before_script:
 
 script:
   - mdbook build docs && mdbook test docs
-  - cargo test
   - cargo test --manifest-path=ant/Cargo.toml
 
 deploy:
