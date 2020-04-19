@@ -1,4 +1,4 @@
-use procon::prelude::*;
+use proconio::input;
 use std::cmp::Reverse;
 
 fn main() {

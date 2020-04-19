@@ -1,4 +1,4 @@
-use procon::prelude::*;
+use proconio::input;
 
 fn main() {
     input! {
