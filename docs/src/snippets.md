@@ -108,3 +108,19 @@ assert_eq!(Some(&5), set.range(..7).next_back());
 assert_eq!(Some(&8), set.range(..=8).next_back());
 # }
 ```
+
+## ビット演算
+
+```rust,ignore
+# fn main() {
+use fixedbitset::FixedBitSet;
+
+// ビット全探索
+for i in 0..(1 << 3) {
+    let mut bits = FixedBitSet::with_capacity(3);
+    for j in 0..3 {
+        bits.set(j, i & (1 << j) > 0);
+    }
+}
+# }
+```
