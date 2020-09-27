@@ -15,7 +15,7 @@ panic = 'abort'
 
 # dependencies added to new project
 [dependencies]
-# proconio = "*"
+proconio = "*"
 # competitive = { git = "https://github.com/tanakh/competitive-rs.git" }
 
 [project]
@@ -24,7 +24,9 @@ panic = 'abort'
 
 # source code template
 template = """
+use proconio::input;
+
 fn main() {
-    unimplemented!();
+    input! { x: usize }
 }
 """
