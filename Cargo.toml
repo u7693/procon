@@ -1,5 +1,5 @@
 [package]
-name = "library"
+name = "procon"
 version = "0.1.0"
 authors = ["Kousuke Takaki <u7693@protonmail.com>"]
 edition = "2018"
