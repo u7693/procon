@@ -20,7 +20,7 @@ proconio = "*"
 
 [project]
 # to create `rust-toolchain` file, uncomment this line.
-# rustc_version = "1.15.1"
+rustc_version = "nightly"
 
 # source code template
 template = """
