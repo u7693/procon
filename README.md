@@ -5,11 +5,16 @@
 ### `String`と`Vec<char>`の変換
 
 ```rust
-let string = "Hello".to_string();
-let string2char = string.chars().collect::<Vec<char>>();
-let char2string = string2char.iter().collect::<String>();
+fn string2char(s: &String) -> Vec<char> {
+    s.chars().collect::<Vec<char>>()
+}
 
-assert_eq!(string, char2string);
+fn char2string(c: &Vec<char>) -> String {
+    c.iter().collect::<String>()
+}
+
+let s = "Hello".to_string();
+assert_eq!(s, char2string(&string2char(&s)));
 ```
 
 ### `Vec`のソート
