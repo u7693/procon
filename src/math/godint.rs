@@ -1,6 +1,6 @@
 use cargo_snippet::snippet;
-use std::ops::{Add, Sub, Mul, Div};
-use std::ops::{AddAssign, SubAssign, MulAssign, DivAssign};
+use std::ops::{Add, Div, Mul, Sub};
+use std::ops::{AddAssign, DivAssign, MulAssign, SubAssign};
 
 #[snippet]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
@@ -68,7 +68,7 @@ impl<const N: i64> Mul for GodInt<N> {
 #[snippet(prefix = "use std::ops::MulAssign;")]
 impl<const N: i64> MulAssign for GodInt<N> {
     fn mul_assign(&mut self, other: Self) {
-        self.0  = (self.0 * other.0) % N;
+        self.0 = (self.0 * other.0) % N;
     }
 }
 
