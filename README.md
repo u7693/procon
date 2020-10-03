@@ -2,6 +2,32 @@
 
 ## tips
 
+### `String`と`Vec<char>`の変換
+
+```rust
+let string = "Hello".to_string();
+let string2char = string.chars().collect::<Vec<char>>();
+let char2string = string2char.iter().collect::<String>();
+
+assert_eq!(string, char2string);
+```
+
+### `Vec`のソート
+
+```rust
+use std::cmp::Reverse;
+
+let mut v = vec![5, 1, 3, 4, 2];
+
+// 昇順でソート
+v.sort();
+assert_eq!(v, vec![1, 2, 3, 4, 5]);
+
+// 降順でソート
+v.sort_by_key(|&k| Reverse(k));
+assert_eq!(v, vec![5, 4, 3, 2, 1]);
+```
+
 ### `Map`のインクリメント
 
 ```rust
